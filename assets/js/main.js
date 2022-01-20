@@ -71,6 +71,13 @@
 					visibleClass: 'navPanel-visible'
 				});
 
+	// Header
+
+		$(document).scroll(function () {
+			var header = $("#header");
+			header.toggleClass('header-solid', $(this).scrollTop() > header.height());
+		});
+
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
 		if (browser.name == 'ie'

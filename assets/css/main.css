@@ -3442,11 +3442,9 @@ input, select, textarea {
 	}
 
 	body.landing #header {
-		/*background: transparent;
+		background: transparent;
 		box-shadow: none;
-		position: absolute;*/
-	    background: #272833;
-	    box-shadow: 0 0.125em 0.125em 0 rgb(0 0 0 / 13%);
+		/*position: absolute;*/
 		position: fixed;
 	}
 
@@ -4134,4 +4132,11 @@ input, select, textarea {
 
 	#logo img {
 		vertical-align: middle;
+	}
+
+	/*Header	*/
+
+	.header-solid {
+		background: #272833 !important;
+		transition: background-color 700ms linear;
 	}
