@@ -3442,9 +3442,12 @@ input, select, textarea {
 	}
 
 	body.landing #header {
-		background: transparent;
+		/*background: transparent;
 		box-shadow: none;
-		position: absolute;
+		position: absolute;*/
+	    background: #272833;
+	    box-shadow: 0 0.125em 0.125em 0 rgb(0 0 0 / 13%);
+		position: fixed;
 	}
 
 /* Banner */
@@ -4127,4 +4130,8 @@ input, select, textarea {
 
 	.button.login:active {
 		background-color: #363f68;
+	}
+
+	#logo img {
+		vertical-align: middle;
 	}
