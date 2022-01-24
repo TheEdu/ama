@@ -252,4 +252,52 @@
 		$banner
 			._parallax();
 
+
+	// Modals
+		// Login
+			var login_modal = document.getElementById("loginModal");
+			var login_btn = document.getElementById("loginModalBtn");
+			var login_span = document.getElementById("loginModalClose");
+
+			// When the user clicks the button, open the login_modal
+			login_btn.onclick = function() {
+				login_modal.style.display = "block";
+			}
+
+			// When the user clicks on <login_span> (x), close the login_modal
+			login_span.onclick = function() {
+				login_modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the login_modal, close it
+			window.onclick = function(event) {
+				if (event.target == login_modal) {
+					login_modal.style.display = "none";
+				}
+			}
+
+		// Singup
+			var singup_modal = document.getElementById("singupModal");
+			var singup_btn = document.getElementById("singupModalBtn");
+			var singup_span = document.getElementById("singupModalClose");
+
+			// When the user clicks the button, open the singup_modal
+			singup_btn.onclick = function() {
+				login_modal.style.display = "none";
+				singup_modal.style.display = "block";
+			}
+
+			// When the user clicks on <singup_span> (x), close the singup_modal
+			singup_span.onclick = function() {
+				singup_modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the singup_modal, close it
+			window.onclick = function(event) {
+				if (event.target == singup_modal) {
+					singup_modal.style.display = "none";
+				}
+			}
+
+
 })(jQuery);

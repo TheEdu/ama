@@ -21,9 +21,8 @@
 					<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="button primary tickets-ga">Tickets</a></li>
-							<li><a href="#" class="button login">Ingresar</a></li>
-							<li><a href="#" id="myBtn">Open Modal</a></li>
+							<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="button tickets tickets-ga">Comprá tu entrada</a></li>
+							<li><a href="#" id="loginModalBtn" class="button primary">Ingresar</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -104,25 +103,83 @@
 					</ul>
 				</footer>
 
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
+			<!-- Login Modal -->
+				<article id="loginModal" class="modal">
 
-			<!-- Modal content -->
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close">&times;</span>
-					<h2>Modal Header</h2>
-				</div>
-				<div class="modal-body">
-					<p>Some text in the Modal Body</p>
-					<p>Some other text...</p>
-				</div>
-				<div class="modal-footer">
-					<h3>Modal Footer</h3>
-				</div>
-			</div>
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span id="loginModalClose" class="close">&times;</span>
+							<img src="images/logo.png">
+						</div>
+						<div class="modal-body">
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-12 col-md-12">
+										<a class="button g-button" href="#"><img src="images/google-logo.png"> Ingresar con Google</a>
+									</div>
 
-			</div>
+
+									<div class="col-12 col-12-xsmall or-container">
+										<div class="line-separator"></div>
+										<div class="or-label">o</div>
+										<div class="line-separator"></div>
+									</div>
+
+									<div class="col-12 col-12-xsmall">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+									</div>
+									<div class="col-12 col-12-xsmall text-right">
+										<a href="#" > Recuperar Contraseña </a>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Ingresar" class="primary" /></li>
+											<li><a href="#" id="singupModalBtn" class="button">Crear Cuenta</a></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</article>
+
+
+			<!-- Singup Modal -->
+				<article id="singupModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span id="singupModalClose" class="close">&times;</span>
+							<img src="images/logo.png">
+						</div>
+						<div class="modal-body">
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-12 col-12-xsmall">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Registrarse" class="primary" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</article>
+
+
 
 		</div>
 
@@ -135,36 +192,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
-
-		<script type="text/javascript">
-			// Get the modal
-			var modal = document.getElementById("myModal");
-
-			// Get the button that opens the modal
-			var btn = document.getElementById("myBtn");
-
-			// Get the <span> element that closes the modal
-			var span = document.getElementsByClassName("close")[0];
-
-			// When the user clicks the button, open the modal 
-			btn.onclick = function() {
-				modal.style.display = "block";
-			}
-
-			// When the user clicks on <span> (x), close the modal
-			span.onclick = function() {
-				modal.style.display = "none";
-			}
-
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-		</script>
-
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3XSHMPB6D"></script>
