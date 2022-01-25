@@ -22,7 +22,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="button tickets tickets-ga">Comprá tu entrada</a></li>
-							<li><a href="#" id="loginModalBtn" class="button primary">Ingresar</a></li>
+							<li><a href="#" class="loginModalBtn button primary">Ingresar</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -138,7 +138,7 @@
 									<div class="col-12">
 										<ul class="actions">
 											<li><input type="submit" value="Ingresar" class="primary" /></li>
-											<li><a href="#" id="singupModalBtn" class="button">Crear Cuenta</a></li>
+											<li><a href="#" class="singupModalBtn button">Crear Cuenta</a></li>
 										</ul>
 									</div>
 								</div>
@@ -167,6 +167,24 @@
 									<div class="col-12 col-12-xsmall">
 										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
 									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password2" id="password2" value="" placeholder="Confirmar Contraseña" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="text" name="alias" id="alias" value="" placeholder="Alias" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="text" name="instagram" id="instagram" value="" placeholder="Instagram" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<select name="ciudad" id="ciudad">
+											<option value="">- Ciudad -</option>
+											<option value="1">Zarate</option>
+											<option value="2">Campana</option>
+											<option value="3">Escobar</option>
+											<option value="4">Baradero</option>
+										</select>
+									</div>
 									<div class="col-12">
 										<ul class="actions">
 											<li><input type="submit" value="Registrarse" class="primary" /></li>
@@ -189,8 +207,10 @@
 
 		<!-- Mobile Pannel -->
 		<div id="navPanel">
+			<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
 			<nav>
-				<li>Edu</li>
+				<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="tickets-ga">Comprá tu entrada</a></li>
+				<li><a href="#" class="loginModalBtn">Ingresar</a></li>
 			</nav>
 		</div>
 

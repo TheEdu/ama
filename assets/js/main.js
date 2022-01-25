@@ -240,13 +240,16 @@
 	// Modals
 		// Login
 			var login_modal = document.getElementById("loginModal");
-			var login_btn = document.getElementById("loginModalBtn");
+			var login_btn_array = document.getElementsByClassName("loginModalBtn");
 			var login_span = document.getElementById("loginModalClose");
 
 			// When the user clicks the button, open the login_modal
-			login_btn.onclick = function() {
-				login_modal.style.display = "block";
-			}
+			[...login_btn_array].forEach(login_btn => {
+				login_btn.onclick = function() {
+					$('body').removeClass('navPanel-visible');
+					login_modal.style.display = "block";
+				}
+			});
 
 			// When the user clicks on <login_span> (x), close the login_modal
 			login_span.onclick = function() {
@@ -262,14 +265,16 @@
 
 		// Singup
 			var singup_modal = document.getElementById("singupModal");
-			var singup_btn = document.getElementById("singupModalBtn");
+			var singup_btn_array = document.getElementsByClassName("singupModalBtn");
 			var singup_span = document.getElementById("singupModalClose");
 
 			// When the user clicks the button, open the singup_modal
-			singup_btn.onclick = function() {
-				login_modal.style.display = "none";
-				singup_modal.style.display = "block";
-			}
+			[...singup_btn_array].forEach(singup_btn => {
+				singup_btn.onclick = function() {
+					login_modal.style.display = "none";
+					singup_modal.style.display = "block";
+				}
+			});
 
 			// When the user clicks on <singup_span> (x), close the singup_modal
 			singup_span.onclick = function() {
