@@ -20,17 +20,12 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: -34.0883116; longitude: -59.0238406;"
-      ></a-text>
 
       <a-box 
         gps-projected-entity-place='latitude: -34.0883116; longitude: -59.0238406'
         gltf-model='glb/crash.glb'
-        scale='100 100 100'>
+        scale='0.2 0.2 0.2'
+        rotation='0 180 0'>
       </a-box>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
