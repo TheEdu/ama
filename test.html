@@ -159,7 +159,11 @@
 				entity.setAttribute('gltf-model', model.url);
 
 				const div = document.querySelector('.instructions');
-				div.innerText = model.info + ' -- ' + entity.getAttribute('gps-entity-place');
+				cord = entity.getAttribute('gps-entity-place')
+				if (cord)
+					div.innerText = model.info + ' - ' + JSON.stringify(cord);
+				else
+					div.innerText = model.info
 		};
 
 		function renderPlaces(places) {
