@@ -70,7 +70,7 @@
 		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 		<a-camera 
 			look-controls-enabled='false'
-			arjs-look-controls='smoothingFactor: 0.1'
+			arjs-look-controls='smoothingFactor: 0.5'
 			gps-camera='gpsMinDistance: 5'
 			rotation-reader>
 		</a-camera>
@@ -122,8 +122,8 @@
 						{
 								name: 'Test',
 								location: {
-										lat: -34.1105401,
-										lng: -59.0125501,
+										lat: current_lat,
+										lng: current_lng,
 								},
 						},
 				];
