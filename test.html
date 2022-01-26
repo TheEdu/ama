@@ -50,7 +50,7 @@
 					z-index: 999999;
 				}
 
-				.instructions {
+				.instructions2 {
 					position: fixed;
 					top: 6%;
 					font-size: 0.5em;
@@ -72,7 +72,7 @@
 			gps-camera 
 			look-controls-enabled='false' 
 			arjs-look-controls='smoothingFactor: 0.1' 
-			gps-camera='gpsMinDistance: 100'
+			gps-camera='gpsMinDistance: 10'
 			rotation-reader>
 		</a-camera>
 	</a-scene>
@@ -100,32 +100,18 @@
 
 			function success(pos) {
 				let crd = pos.coords;
-
-				console.log('Your current position is:');
-				console.log('Latitude : ' + crd.latitude);
-				console.log('Longitude: ' + crd.longitude);
-				console.log('More or less ' + crd.accuracy + ' meters.');
-
 				let places = staticLoadPlaces(crd.latitude, crd.longitude);
 				renderPlaces(places);
 			};
 
-			function error(err) {
-				console.warn('ERROR(' + err.code + '): ' + err.message);
-			};
-
-
 			function success_watch(pos) {
 				const div = document.querySelector('.instructions2');
 				let crd = pos.coords;
-
-				console.log('Your current position is:');
-				console.log('Latitude : ' + crd.latitude);
-				console.log('Longitude: ' + crd.longitude);
-				console.log('More or less ' + crd.accuracy + ' meters.');
-
 				div.innerText = 'Latitude : ' + crd.latitude + ', ' + 'Longitude: ' + crd.longitude
+			};
 
+			function error(err) {
+				console.warn('ERROR(' + err.code + '): ' + err.message);
 			};
 
 			navigator.geolocation.getCurrentPosition(success, error, options);
@@ -135,7 +121,7 @@
 		function staticLoadPlaces(current_lat, current_lng) {
 				return [
 						{
-								name: 'Pokèmon',
+								name: 'Test',
 								location: {
 										lat: current_lat,
 										lng: current_lng,
