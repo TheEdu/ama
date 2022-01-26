@@ -73,17 +73,37 @@
 			const button = document.querySelector('button[data-action="change"]');
 			button.innerText = '﹖';
 
-			let places = staticLoadPlaces();
-			renderPlaces(places);
+			// let places = staticLoadPlaces();
+			// renderPlaces(places);
+
+			let options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
+
+			function success(pos) {
+				let crd = pos.coords;
+
+				console.log('Your current position is:');
+				console.log('Latitude : ' + crd.latitude);
+				console.log('Longitude: ' + crd.longitude);
+				console.log('More or less ' + crd.accuracy + ' meters.');
+
+				let places = staticLoadPlaces(crd.latitude, crd.longitude);
+				renderPlaces(places);
+			};
+
+			function error(err) {
+				console.warn('ERROR(' + err.code + '): ' + err.message);
+			};
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
 		};
 
-		function staticLoadPlaces() {
+		function staticLoadPlaces(current_lat, current_lng) {
 				return [
 						{
 								name: 'Pokèmon',
 								location: {
-										-34.0983808,
-										-59.0413824,
+										current_lat,
+										current_lng,
 								},
 						},
 				];
@@ -93,19 +113,19 @@
 		var modelIndex = 0;
 		var models = [
 				{
-						url: './glb/crash.glb',
+						url: 'glb/crash.glb',
 						scale: '0.5 0.5 0.5',
 						info: 'Magnemite, Lv. 5, HP 10/10',
 						rotation: '0 180 0',
 				},
 				{
-						url: './glb/crash.glb',
+						url: 'glb/crash.glb',
 						scale: '0.2 0.2 0.2',
 						rotation: '0 180 0',
 						info: 'Articuno, Lv. 80, HP 100/100',
 				},
 				{
-						url: './glb/crash.glb',
+						url: 'glb/crash.glb',
 						scale: '0.08 0.08 0.08',
 						rotation: '0 180 0',
 						info: 'Dragonite, Lv. 99, HP 150/150',
