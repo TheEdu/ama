@@ -49,11 +49,20 @@
 					color: white;
 					z-index: 999999;
 				}
+
+				.instructions {
+					position: fixed;
+					top: 10%;
+					font-size: 0.5em;
+					color: white;
+					z-index: 999999;
+				}
 		</style>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
 	<div class="centered instructions"></div>
+	<div class="centered instructions2"></div>
 	
 	<a-scene 
 		vr-mode-ui='enabled: false' 
@@ -99,7 +108,22 @@
 				console.warn('ERROR(' + err.code + '): ' + err.message);
 			};
 
+
+			function success_watch(pos) {
+				const div = document.querySelector('.instructions2');
+				let crd = pos.coords;
+
+				console.log('Your current position is:');
+				console.log('Latitude : ' + crd.latitude);
+				console.log('Longitude: ' + crd.longitude);
+				console.log('More or less ' + crd.accuracy + ' meters.');
+
+				div.innerText = 'Latitude : ' + crd.latitude + ', ' + 'Longitude: ' + crd.longitude
+
+			};
+
 			navigator.geolocation.getCurrentPosition(success, error, options);
+			navigator.geolocation.watchPosition(success_watch, error, options);
 		};
 
 		function staticLoadPlaces(current_lat, current_lng) {
@@ -168,7 +192,6 @@
 
 		function renderPlaces(places) {
 				let scene = document.querySelector('a-scene');
-				console.log(scene)
 
 				places.forEach((place) => {
 						let latitude = place.location.lat;
@@ -187,8 +210,6 @@
 								var newIndex = modelIndex % models.length;
 								setModel(models[newIndex], entity);
 						});
-
-						console.log(model)
 
 						scene.appendChild(model);
 				});
