@@ -3597,6 +3597,7 @@ input, select, textarea {
 
 	#footer {
 		background: #272833;
+		background: #8e2149;
 		padding: 2.5em 0;
 		text-align: center;
 	}
@@ -4318,5 +4319,6 @@ input, select, textarea {
 
 	.header-solid {
 		background: #272833 !important;
+		background: rgb(150 35 77 / 95%) !important;
 		transition: background-color 700ms linear;
 	}
