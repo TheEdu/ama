@@ -3162,6 +3162,7 @@ input, select, textarea {
 
 		.spotlight.style2 .content {
 			border-color: #5480f1;
+			border-color: #e44c65;
 		}
 
 		.spotlight.style3 .content {
@@ -4071,6 +4072,7 @@ input, select, textarea {
 				width: 100%;
 				z-index: 10001;
 				background: #272833;
+				background: #8e2149;
 				box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
 			}
 
@@ -4113,7 +4115,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: #583239;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;
@@ -4299,16 +4301,19 @@ input, select, textarea {
 
 	.button.tickets {
 		background-color: #3c5794;
+		background-color: #583239;
 		box-shadow: none;
 		color: #ffffff !important;
 	}
 
 	.button.tickets:hover {
 		background-color: #5e7ebf;
+		background-color: #844f59;
 	}
 
 	.button.tickets:active {
 		background-color: #363f68;
+		background-color: #4a2b31;
 	}
 
 	#logo img {
