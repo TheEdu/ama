@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Map</title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<style type="text/css">
+			/* Always set the map height explicitly to define the size of the div element that contains the map. */
+				#map {
+					height: 100%;
+				}
+
+			/* Optional: Makes the sample page fill the window. */
+				html,
+				body {
+					height: 100%;
+					margin: 0;
+					padding: 0;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+
+
+		<script 
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4&callback=initMap&v=weekly"
+			async>
+		</script>
+
+
+
+		<script type="text/javascript">
+
+			let map;
+			let marker = null;
+
+			function autoUpdate() {
+				navigator.geolocation.getCurrentPosition(position => {
+					var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+					if (marker) {
+						// Marker already created - Move it
+						msg = 'Market move to new point -->' + JSON.stringify(newPoint)
+						console.log(msg)
+						alert(msg)
+						marker.setPosition(newPoint);
+					} else {
+						// Marker does not exist - Create it
+						marker = new google.maps.Marker({
+							position: newPoint,
+							map: map
+						});
+					}
+
+					// Center the map on the new position
+					map.setCenter(newPoint);
+				});
+
+				// Call the autoUpdate() function every 15 seconds
+				setTimeout(autoUpdate, 15000);
+			}
+
+			function initMap() {
+				map = new google.maps.Map(document.getElementById("map"), {
+					center: { lat: -34.1082112, lng: -59.031552 },
+					zoom: 8,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+
+				autoUpdate();
+			}
+
+			
+		</script>
+	</body>
+</html>
