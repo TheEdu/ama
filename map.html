@@ -67,7 +67,11 @@
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				});
 
-				autoUpdate();
+				if (navigator.geolocation) {
+					autoUpdate();
+				else {
+					alert('Geolocation is not supported by this browser.');
+				}
 			}
 
 			
