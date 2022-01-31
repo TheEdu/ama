@@ -30,7 +30,9 @@
 
         </style>
 	</head>
-	<body >
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
 
 				<a-scene
 					vr-mode-ui="enabled: false;"
@@ -67,5 +69,139 @@
 
 					<a-entity camera></a-entity>
 				</a-scene>
+
+
+
+			<!-- Login Modal -->
+				<article id="loginModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span id="loginModalClose" class="close">&times;</span>
+							<img src="images/logo.png">
+						</div>
+						<div class="modal-body">
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-12 col-md-12">
+										<a class="button g-button" href="#"><img src="images/google-logo.png"> Ingresar con Google</a>
+									</div>
+
+
+									<div class="col-12 col-12-xsmall or-container">
+										<div class="line-separator"></div>
+										<div class="or-label">o</div>
+										<div class="line-separator"></div>
+									</div>
+
+									<div class="col-12 col-12-xsmall">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+									</div>
+									<div class="col-12 col-12-xsmall text-right">
+										<a href="#" > Recuperar Contraseña </a>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Ingresar" class="primary" /></li>
+											<li><a href="#" class="singupModalBtn button">Crear Cuenta</a></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</article>
+
+
+			<!-- Singup Modal -->
+				<article id="singupModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span id="singupModalClose" class="close">&times;</span>
+							<img src="images/logo.png">
+						</div>
+						<div class="modal-body">
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-12 col-12-xsmall">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="password" name="password2" id="password2" value="" placeholder="Confirmar Contraseña" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="text" name="alias" id="alias" value="" placeholder="Alias" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<input type="text" name="instagram" id="instagram" value="" placeholder="Instagram" />
+									</div>
+									<div class="col-12 col-12-xsmall">
+										<select name="ciudad" id="ciudad">
+											<option value="">- Ciudad -</option>
+											<option value="1">Zarate</option>
+											<option value="2">Campana</option>
+											<option value="3">Escobar</option>
+											<option value="4">Baradero</option>
+										</select>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Registrarse" class="primary" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</article>
+
+		</div>
+
+		<!-- Mobile Nav -->
+		<div id="titleBar">
+			<a href="#navPanel" class="toggle"></a>
+			<span class="title"> <img src="images/logo.png"> </span>
+		</div>
+
+		<!-- Mobile Pannel -->
+		<div id="navPanel">
+			<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
+			<nav>
+				<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="tickets-ga">Comprá tu entrada</a></li>
+				<li><a href="#" class="loginModalBtn">Ingresar</a></li>
+			</nav>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3XSHMPB6D"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-G3XSHMPB6D');
+		</script>
+
+
 	</body>
 </html>
