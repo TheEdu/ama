@@ -36,8 +36,9 @@
 
 	// Dropdowns.
 		$('#nav > ul').dropotron({
-			alignment: 'right',
-			hideDelay: 350
+			alignment: 'center',
+			expandMode: 'click',
+			hideDelay: 350,
 		});
 
 	// Nav.
