@@ -14,19 +14,32 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload landing">
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="f-ama button tickets tickets-ga">Compra tu entrada</a></li>
+						<li><a href="#" class="f-ama loginModalBtn button tickets">Ingresar</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Header Mobile -->
+			<div id="titleBar">
+				<a href="#navPanel" class="toggle"></a>
+				<span class="title"> <img src="images/logo.png"> </span>
+			</div>
+
+			<div id="navPanel">
+				<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
+				<nav>
+					<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="tickets-ga">Comprá tu entrada</a></li>
+					<li><a href="#" class="loginModalBtn">Ingresar</a></li>
+				</nav>
+			</div>
+
 		<div id="page-wrapper">
-
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="f-ama button tickets tickets-ga">Compra tu entrada</a></li>
-							<!-- <li><a href="#" class="f-ama loginModalBtn button tickets">Ingresar</a></li> -->
-						</ul>
-					</nav>
-				</header>
-
 			<!-- Banner -->
 				<section id="banner">
 					<div class="content">
@@ -96,128 +109,117 @@
 						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26428.38338465815!2d-59.001944707459934!3d-34.10671990823079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0cbb2e82dacd%3A0x3915694b9c4e479f!2sLas%20Tejas!5e0!3m2!1ses!2sar!4v1642619389574!5m2!1ses!2sar" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 					</div>
 				</section>
+		</div>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.instagram.com/experiencia.ama/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://api.whatsapp.com/send?phone=541160367777&text=" class="icon brands alt fa-whatsapp"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li><b>&copy; <span class="f-ama-2"> AMA </span> 2022. All rights reserved.</b></li>
-					</ul>
-				</footer>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/experiencia.ama/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://api.whatsapp.com/send?phone=541160367777&text=" class="icon brands alt fa-whatsapp"><span class="label">GitHub</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li><b>&copy; <span class="f-ama-2"> AMA </span> 2022. All rights reserved.</b></li>
+				</ul>
+			</footer>
 
-			<!-- Login Modal -->
-				<article id="loginModal" class="modal">
+		<!-- Login Modal -->
+			<article id="loginModal" class="modal">
 
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<span id="loginModalClose" class="close">&times;</span>
-							<img src="images/logo.png">
-						</div>
-						<div class="modal-body">
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-12 col-md-12">
-										<a class="button g-button" href="#"><img src="images/google-logo.png"> Ingresar con Google</a>
-									</div>
-
-
-									<div class="col-12 col-12-xsmall or-container">
-										<div class="line-separator"></div>
-										<div class="or-label">o</div>
-										<div class="line-separator"></div>
-									</div>
-
-									<div class="col-12 col-12-xsmall">
-										<input type="email" name="email" id="email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
-									</div>
-									<div class="col-12 col-12-xsmall text-right">
-										<a href="#" > Recuperar Contraseña </a>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Ingresar" class="primary" /></li>
-											<li><a href="#" class="singupModalBtn button">Crear Cuenta</a></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<span id="loginModalClose" class="close">&times;</span>
+						<img src="images/logo.png">
 					</div>
-
-				</article>
-
-
-			<!-- Singup Modal -->
-				<article id="singupModal" class="modal">
-
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<span id="singupModalClose" class="close">&times;</span>
-							<img src="images/logo.png">
-						</div>
-						<div class="modal-body">
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-12 col-12-xsmall">
-										<input type="email" name="email" id="email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<input type="password" name="password2" id="password2" value="" placeholder="Confirmar Contraseña" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<input type="text" name="alias" id="alias" value="" placeholder="Alias" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<input type="text" name="instagram" id="instagram" value="" placeholder="Instagram" />
-									</div>
-									<div class="col-12 col-12-xsmall">
-										<select name="ciudad" id="ciudad">
-											<option value="">- Ciudad -</option>
-											<option value="1">Zarate</option>
-											<option value="2">Campana</option>
-											<option value="3">Escobar</option>
-											<option value="4">Baradero</option>
-										</select>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Registrarse" class="primary" /></li>
-										</ul>
-									</div>
+					<div class="modal-body">
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<!-- <div class="col-12 col-md-12">
+									<a class="button g-button" href="#"><img src="images/google-logo.png"> Ingresar con Google</a>
 								</div>
-							</form>
-						</div>
+
+
+								<div class="col-12 col-12-xsmall or-container">
+									<div class="line-separator"></div>
+									<div class="or-label">o</div>
+									<div class="line-separator"></div>
+								</div> -->
+
+								<div class="col-12 col-12-xsmall">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+								</div>
+
+								<!-- <div class="col-12 col-12-xsmall text-right">
+									<a href="#" > Recuperar Contraseña </a>
+								</div> -->
+								
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Ingresar" class="primary" /></li>
+										<li><a href="#" class="singupModalBtn button">Crear Cuenta</a></li>
+									</ul>
+								</div>
+							</div>
+						</form>
 					</div>
+				</div>
 
-				</article>
+			</article>
 
-		</div>
 
-		<!-- Mobile Nav -->
-		<div id="titleBar">
-			<a href="#navPanel" class="toggle"></a>
-			<span class="title"> <img src="images/logo.png"> </span>
-		</div>
+		<!-- Singup Modal -->
+			<article id="singupModal" class="modal">
 
-		<!-- Mobile Pannel -->
-		<div id="navPanel">
-			<h1 id="logo"><a href="/"><img src="images/logo.png"></a></h1>
-			<nav>
-				<li><a href="https://ama.tuqr.ar/events/experiencia-ama/" class="tickets-ga">Comprá tu entrada</a></li>
-				<li><a href="#" class="loginModalBtn">Ingresar</a></li>
-			</nav>
-		</div>
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<span id="singupModalClose" class="close">&times;</span>
+						<img src="images/logo.png">
+					</div>
+					<div class="modal-body">
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-12 col-12-xsmall">
+									<input type="text" name="name" id="name" value="" placeholder="Nombre" required/>
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="email" name="email" id="email" value="" placeholder="Email" required/>
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="password" name="password" id="password" value="" placeholder="Contraseña" required/>
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="password" name="password2" id="password2" value="" placeholder="Confirmar Contraseña" required/>
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="text" name="instagram" id="instagram" value="" placeholder="Instagram" />
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<input type="text" name="avatar" id="avatar" value="" placeholder="Avatar" />
+								</div>
+								<div class="col-12 col-12-xsmall">
+									<select name="ciudad" id="ciudad">
+										<option value="">- Ciudad -</option>
+										<option value="1">Zarate</option>
+										<option value="2">Campana</option>
+										<option value="3">Escobar</option>
+										<option value="4">Baradero</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Registrarse" class="primary" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</article>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
