@@ -28,7 +28,7 @@
 							</a>
 							<ul>
 								<li><span><b>Nombre del Usuario</b></span></li>
-								<li><a href="#">Donde estoy?</a></li>
+								<li><a href="#" onclick="showTracker()">Donde estoy?</a></li>
 								<li><a href="#">Directo</a></li>
 								<li><a href="#">Mundo Ama</a></li>
 								<li><a href="#"><b>Salir</b></a></li>
@@ -55,7 +55,7 @@
 
 					<span><b>Nombre del Usuario</b></span>
 					<br>
-					<a href="#">Donde estoy?</a>
+					<a href="#" onclick="showTracker()">Donde estoy?</a>
 					<div class="line-separator"></div>
 
 					<a href="#">Directo</a>
@@ -134,13 +134,24 @@
 				<section id="five" class="wrapper style2 special fade">
 					<div class="container">
 						<img src="images/logo.png">
-						<header id="map-header">
+						<header class="map-header">
 							<p>Sábado <b>5 de Marzo del 2022</b> en La Ciudad de <b>Campana</b>, en el Camping “<b>Las Tejas</b>”</p>
 						</header>
-						<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26428.38338465815!2d-59.001944707459934!3d-34.10671990823079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0cbb2e82dacd%3A0x3915694b9c4e479f!2sLas%20Tejas!5e0!3m2!1ses!2sar!4v1642619389574!5m2!1ses!2sar" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+						<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26428.38338465815!2d-59.001944707459934!3d-34.10671990823079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0cbb2e82dacd%3A0x3915694b9c4e479f!2sLas%20Tejas!5e0!3m2!1ses!2sar!4v1642619389574!5m2!1ses!2sar" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 					</div>
 				</section>
 		</div>
+
+		<!-- Googgle Map - Tracker -->
+			<article id="tracker" class="wrapper style2 special">
+				<div class="container">
+					<img src="images/logo.png">
+					<header class="map-header">
+						<b>Tracker</b>
+					</header>
+					<div id="tracker-map" class="map"></div>
+				</div>
+			</article>
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -269,6 +280,63 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-G3XSHMPB6D');
+		</script>
+
+		<!-- Google maps -->
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4"></script>
+
+		<script type="text/javascript">
+			let map;
+			let marker = null;
+
+			function autoUpdate() {
+				navigator.geolocation.getCurrentPosition(position => {
+					var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+					if (marker) {
+						// Marker already created - Move it
+						msg = 'Market move to new point -->' + JSON.stringify(newPoint)
+						console.log(msg)
+						marker.setPosition(newPoint);
+					} else {
+						// Marker does not exist - Create it
+						marker = new google.maps.Marker({
+							position: newPoint,
+							map: map
+						});
+					}
+
+					// Center the map on the new position
+					map.setCenter(newPoint);
+				});
+
+				// Call the autoUpdate() function every 15 seconds
+				setTimeout(autoUpdate, 15000);
+			}
+
+			function initMap() {
+				map = new google.maps.Map(document.getElementById("tracker-map"), {
+					center: { lat: -34.1082112, lng: -59.031552 },
+					zoom: 16,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+
+				if (navigator.geolocation) {
+					autoUpdate();
+				} else {
+					alert('Geolocation is not supported by this browser.');
+				}
+			}
+
+			function showTracker() {
+				$('body').removeClass('navPanel-visible');
+				$('body').addClass('is-preload');
+				$('#page-wrapper').hide();
+				$('#tracker').show();
+				initMap();
+				$('body').removeClass('is-preload');
+			}
+
 		</script>
 
 
