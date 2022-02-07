@@ -145,7 +145,6 @@
 		<!-- Googgle Map - Tracker -->
 			<article id="tracker" class="wrapper style2 special">
 				<div class="container">
-					<img src="images/logo.png">
 					<header class="map-header">
 						<b>Tracker</b>
 					</header>
@@ -284,34 +283,28 @@
 
 		<!-- Google maps -->
 		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4"></script>
-
 		<script type="text/javascript">
 			let map;
 			let marker = null;
 
-			function autoUpdate() {
-				navigator.geolocation.getCurrentPosition(position => {
-					var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			function updatePosition(position) {
+				var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-					if (marker) {
-						// Marker already created - Move it
-						msg = 'Market move to new point -->' + JSON.stringify(newPoint)
-						console.log(msg)
-						marker.setPosition(newPoint);
-					} else {
-						// Marker does not exist - Create it
-						marker = new google.maps.Marker({
-							position: newPoint,
-							map: map
-						});
-					}
+				if (marker) {
+					// Marker already created - Move it
+					msg = 'Market move to new point -->' + JSON.stringify(newPoint)
+					console.log(msg)
+					marker.setPosition(newPoint);
+				} else {
+					// Marker does not exist - Create it
+					marker = new google.maps.Marker({
+						position: newPoint,
+						map: map
+					});
+				}
 
-					// Center the map on the new position
-					map.setCenter(newPoint);
-				});
-
-				// Call the autoUpdate() function every 15 seconds
-				setTimeout(autoUpdate, 15000);
+				// Center the map on the new position
+				map.setCenter(newPoint);
 			}
 
 			function initMap() {
@@ -322,7 +315,7 @@
 				});
 
 				if (navigator.geolocation) {
-					autoUpdate();
+					navigator.geolocation.watchPosition(updatePosition)
 				} else {
 					alert('Geolocation is not supported by this browser.');
 				}
@@ -334,9 +327,10 @@
 				$('#page-wrapper').hide();
 				$('#tracker').show();
 				initMap();
-				$('body').removeClass('is-preload');
+				setTimeout(() => {
+					$('body').removeClass('is-preload');
+				}, 1000);
 			}
-
 		</script>
 
 
