@@ -27,8 +27,8 @@
 							<ul>
 								<li><span><b>Nombre del Usuario</b></span></li>
 								<li><a href="#" onclick="showTracker()">Donde estoy?</a></li>
-								<li><a href="#">Directo</a></li>
-								<li><a href="#" onclick="showAR()">Mundo Ama</a></li>
+								<li><a href="#" onclick="showYouTube()">Show en Vivo</a></li>
+								<li><a href="#" >Mundo Ama</a></li>
 								<li><a href="#"><b>Salir</b></a></li>
 							</ul>
 						</li>
@@ -56,10 +56,10 @@
 					<a href="#" onclick="showTracker()">Donde estoy?</a>
 					<div class="line-separator"></div>
 
-					<a href="#">Directo</a>
+					<a href="#" onclick="showYouTube()">Show en Vivo</a>
 					<div class="line-separator"></div>
 
-					<a href="#" onclick="showAR()">Mundo Ama</a>
+					<a href="#">Mundo Ama</a>
 					<div class="line-separator"></div>
 
 					<a href="https://ama.tuqr.ar/events/experiencia-ama/" class="tickets-ga">Comprá tu entrada</a>
@@ -150,45 +150,14 @@
 				</div>
 			</article>
 
-		<!-- Mundo Ama - Realidad Aumentada -->
-			<a-scene
-	            vr-mode-ui="enabled: false;"
-	            loading-screen="enabled: false;"
-	            renderer="logarithmicDepthBuffer: true;"
-	            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-	            id="scene"
-	            embedded
-	            gesture-detector
-	        >
-	            <a-assets>
-	                <a-asset-item
-	                    id="animated-asset"
-	                    src="assets/asset.glb"
-	                ></a-asset-item>
-	            </a-assets>
-
-	            <a-marker
-	                id="animated-marker"
-	                type="pattern"
-	                preset="custom"
-	                url="assets/marker.patt"
-	                raycaster="objects: .clickable"
-	                emitevents="true"
-	                cursor="fuse: false; rayOrigin: mouse;"
-	                id="markerA"
-	            >
-	                <a-entity
-	                    id="bowser-model"
-	                    scale="0.17602755668209502 0.17602755668209502 0.17602755668209502"
-	                    animation-mixer="loop: repeat"
-	                    gltf-model="#animated-asset"
-	                    class="clickable"
-	                    gesture-handler
-	                ></a-entity>
-	            </a-marker>
-
-	            <a-entity camera></a-entity>
-	        </a-scene>
+		<!-- Youtube -->
+			<article id="youtube" class="wrapper style2 special">
+				<div class="container">
+					<iframe class="youtube-video"
+					src="https://www.youtube.com/embed/TRgFGZ7LTis"
+					frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</article>
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -247,7 +216,6 @@
 				</div>
 			</article>
 
-
 		<!-- Singup Modal -->
 			<article id="singupModal" class="modal">
 
@@ -299,97 +267,92 @@
 			</article>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3XSHMPB6D"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-G3XSHMPB6D');
-		</script>
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3XSHMPB6D"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-G3XSHMPB6D');
+			</script>
 
 		<!-- Google maps -->
-		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4"></script>
-		<script type="text/javascript">
-			let map;
-			let marker = null;
+			<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4"></script>
+			<script type="text/javascript">
+				let map;
+				let marker = null;
 
-			function updatePosition(position) {
-				var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				function updatePosition(position) {
+					var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-				if (marker) {
-					// Marker already created - Move it
-					msg = 'Market move to new point -->' + JSON.stringify(newPoint)
-					console.log(msg)
-					marker.setPosition(newPoint);
-				} else {
-					// Marker does not exist - Create it
-					marker = new google.maps.Marker({
-						position: newPoint,
-						map: map
+					if (marker) {
+						// Marker already created - Move it
+						msg = 'Market move to new point -->' + JSON.stringify(newPoint)
+						console.log(msg)
+						marker.setPosition(newPoint);
+					} else {
+						// Marker does not exist - Create it
+						marker = new google.maps.Marker({
+							position: newPoint,
+							map: map
+						});
+					}
+
+					// Center the map on the new position
+					map.setCenter(newPoint);
+				}
+
+				function initMap() {
+					map = new google.maps.Map(document.getElementById("tracker-map"), {
+						center: { lat: -34.1082112, lng: -59.031552 },
+						zoom: 16,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
 					});
+
+					if (navigator.geolocation) {
+						navigator.geolocation.watchPosition(updatePosition)
+					} else {
+						alert('Geolocation is not supported by this browser.');
+					}
 				}
 
-				// Center the map on the new position
-				map.setCenter(newPoint);
-			}
+				function showTracker() {
+					$('body').removeClass('navPanel-visible');
+					$('body').addClass('is-preload');
+					$('#page-wrapper').hide();
+					$('#youtube').hide();
 
-			function initMap() {
-				map = new google.maps.Map(document.getElementById("tracker-map"), {
-					center: { lat: -34.1082112, lng: -59.031552 },
-					zoom: 16,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				});
-
-				if (navigator.geolocation) {
-					navigator.geolocation.watchPosition(updatePosition)
-				} else {
-					alert('Geolocation is not supported by this browser.');
+					setTimeout(() => {
+						$('#tracker').show();
+						initMap();
+						$('body').removeClass('is-preload');
+					}, 1000);
 				}
-			}
+			</script>
 
-			function showTracker() {
-				$('body').removeClass('navPanel-visible');
-				$('body').addClass('is-preload');
-				$('#page-wrapper').hide();
+		<!-- YouTube -->
+			<script type="text/javascript">
+				function showYouTube() {
+					$('body').removeClass('navPanel-visible');
+					$('body').addClass('is-preload');
+					$('#page-wrapper').hide();
+					$('#tracker').hide();
 
-				setTimeout(() => {
-					$('#tracker').show();
-					initMap();
-					$('body').removeClass('is-preload');
-				}, 1000);
-			}
-		</script>
-
-		<!-- Realidad Aumentada -->
-		<script src="assets/js/ar/aframe.min.js"></script>
-		<script src="assets/js/ar/aframe-ar.js"></script>
-		<script src="assets/js/ar/aframe-extras.loaders.min.js"></script>
-		<script src="assets/js/ar/gesture-detector.js"></script>
-		<script src="assets/js/ar/gesture-handler.js"></script>
-
-		<script type="text/javascript">
-			function showAR() {
-				$('body').removeClass('navPanel-visible');
-				$('body').addClass('is-preload');
-				$('#page-wrapper').hide();
-
-				setTimeout(() => {
-					$('a-scene').show();
-					$('body').removeClass('is-preload');
-				}, 1000);
-			}
-		</script>
-
+					setTimeout(() => {
+						$('#youtube').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
+			</script>
 
 	</body>
 </html>

@@ -648,6 +648,118 @@ input, select, textarea {
 
 	}
 
+
+	/*Estilo boton de Tickets*/
+
+		.button.tickets {
+			background-color: #3c5794;
+			background-color: #583239;
+			box-shadow: none;
+			color: #ffffff !important;
+		}
+
+		.button.tickets:hover {
+			background-color: #5e7ebf;
+			background-color: #844f59;
+		}
+
+		.button.tickets:active {
+			background-color: #363f68;
+			background-color: #4a2b31;
+		}
+
+		#logo img {
+			vertical-align: middle;
+		}
+
+	/*Header	*/
+
+		.header-solid {
+			background: #272833 !important;
+			background: rgb(150 35 77 / 95%) !important;
+			transition: background-color 700ms linear;
+		}
+
+
+	/* Arrow Down */
+
+		.arrow-down {
+			display: inline-block;
+			margin-left: 0.255em;
+			vertical-align: middle;
+			content: "";
+			border-top: 0.3em solid;
+			border-right: 0.3em solid transparent;
+			border-bottom: 0;
+			border-left: 0.3em solid transparent;
+		}
+
+		.user-img {
+			width: 2.5em;
+			border-radius: 50%;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 2px;
+			border: 1.5px solid white;
+		}
+
+
+	/*Tracker*/
+
+		#tracker {
+			display: none;
+			/*background-attachment: fixed;*/
+			background-image: url("../../images/pic04.jpg");
+			background-position: center center;
+			background-size: cover;
+			box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+			position: relative;
+			text-align: center;
+			z-index: 21;
+			height: 42em;
+		}
+
+			.map-header {
+				margin: auto;
+				max-width: 1000px;
+				background: rgb(2 4 0 / 40%);
+				margin-bottom: 1em;
+				font-size: 0.9em;
+			}
+
+			.map {
+				border: 0;
+				max-width: 100%;
+				width: 1000px;
+				height: 500px;
+				margin: auto;
+			}
+
+
+	/* YouTube */
+
+		#youtube {
+				display: none;
+				background-image: url("../../images/pic05.jpg");
+				background-position: center center;
+				background-size: cover;
+				box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+				position: relative;
+				text-align: center;
+				z-index: 21;
+				height: 100%;
+			}
+			
+			.youtube-video {
+				border: 0;
+				max-width: 100%;
+				width: 1400px;
+				height: 700px;
+				margin: auto;
+			}
+
+
+
 /* Container */
 
 	.container {
@@ -3577,22 +3689,6 @@ input, select, textarea {
 				width: 100%;
 			}*/
 
-	.map-header {
-		margin: auto;
-		max-width: 600px;
-		background: rgb(2 4 0 / 40%);
-		margin-bottom: 1em;
-		font-size: 0.9em;
-	}
-
-	.map {
-		border: 0;
-		max-width: 100%;
-		width: 600px;
-		height:450px;
-		margin: auto;
-	}
-
 
 /* Footer */
 
@@ -3825,6 +3921,13 @@ input, select, textarea {
 
 	@media screen and (max-width: 980px) {
 
+		/* Youtube */
+
+			.youtube-video, .map {
+				width: 900px;
+				height: 700px;
+			}
+
 		/* Basic */
 
 			body, input, select, textarea {
@@ -3934,6 +4037,13 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
+
+		/* Youtube */
+
+			.youtube-video, .map {
+				width: 600px;
+				height: 450px;
+			}
 
 		/* Basic */
 
@@ -4235,6 +4345,13 @@ input, select, textarea {
 
 	@media screen and (max-width: 480px) {
 
+		/* Youtube */
+
+			.youtube-video, .map {
+				width: 450px;
+				height: 400px;
+			}
+
 		/* Basic */
 
 			html, body {
@@ -4294,75 +4411,3 @@ input, select, textarea {
 					}
 
 	}
-
-
-
-	/*Estilo boton de Tickets*/
-
-	.button.tickets {
-		background-color: #3c5794;
-		background-color: #583239;
-		box-shadow: none;
-		color: #ffffff !important;
-	}
-
-	.button.tickets:hover {
-		background-color: #5e7ebf;
-		background-color: #844f59;
-	}
-
-	.button.tickets:active {
-		background-color: #363f68;
-		background-color: #4a2b31;
-	}
-
-	#logo img {
-		vertical-align: middle;
-	}
-
-	/*Header	*/
-
-	.header-solid {
-		background: #272833 !important;
-		background: rgb(150 35 77 / 95%) !important;
-		transition: background-color 700ms linear;
-	}
-
-
-	/* Arrow Down */
-
-	.arrow-down {
-		display: inline-block;
-		margin-left: 0.255em;
-		vertical-align: middle;
-		content: "";
-		border-top: 0.3em solid;
-		border-right: 0.3em solid transparent;
-		border-bottom: 0;
-		border-left: 0.3em solid transparent;
-	}
-
-	.user-img {
-		width: 2.5em;
-		border-radius: 50%;
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 2px;
-		border: 1.5px solid white;
-	}
-
-
-	/*Tracker*/
-
-	#tracker {
-			display: none;
-			/*background-attachment: fixed;*/
-			background-image: url("../../images/pic04.jpg");
-			background-position: center center;
-			background-size: cover;
-			box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-			position: relative;
-			text-align: center;
-			z-index: 21;
-			height: 42em;
-		}
