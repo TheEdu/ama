@@ -164,11 +164,11 @@
 		<!-- AR.js -->
 			<article id="arjs" class="wrapper special">
 				<div class="container">
-					<iframe 
+					<!-- <iframe 
 					class="arjs-animation"
 					src="./ar.html"
 					frameborder="0"
-					 allowfullscreen></iframe>
+					allowfullscreen></iframe> -->
 				</div>
 			</article>
 
@@ -298,6 +298,15 @@
 				gtag('config', 'G-G3XSHMPB6D');
 			</script>
 
+		<!-- Main: Page Wrapper -->
+			<script type="text/javascript">
+				const hideMain = () => {
+						$('body').removeClass('navPanel-visible');
+						$('body').addClass('is-preload');
+						$('#page-wrapper').hide();
+					}
+			</script>
+
 		<!-- Google maps -->
 			<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKxxWbaldC9iSmt8EvyfKV9xsZw9E7V4"></script>
 			<script type="text/javascript">
@@ -348,6 +357,20 @@
 					}
 				}
 
+				const showTracker = () => {
+					// Hide all
+					hideMain();
+					hideYouTube();
+					hideAR();
+
+					// Show
+					setTimeout(() => {
+						initTracker();
+						$('#tracker').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
+
 			</script>
 
 		<!-- Youtube -->
@@ -359,7 +382,7 @@
 					youtube.setAttribute('frameborder', '0');
 					youtube.setAttribute('allow', 'autoplay; encrypted-media');
 					youtube.setAttribute('allowfullscreen', true);
-					$('#youtube > div').appendChild(youtube)
+					$('#youtube > div').append(youtube)
 				}
 
 				const hideYouTube = () => {
@@ -371,10 +394,10 @@
 					// Hide all
 					hideMain();
 					hideTracker();
-					$('#arjs').hide();
+					hideAR();
 
 					setTimeout(() => {
-						initYouTube()
+						initYouTube();
 						$('#youtube').show();
 						$('body').removeClass('is-preload');
 					}, 1000);
@@ -382,32 +405,20 @@
 				
 			</script>
 
-		<!-- Show() -->
+		<!-- AR.js -->
 			<script type="text/javascript">
-
-				const hideAr = () => {
-					$('html, body').removeClass('show-ar');
-					$('#footer').show();
+				const initAR = () => {
+					arjs = document.createElement('iframe');
+					arjs.setAttribute('class', 'arjs-animation');
+					arjs.setAttribute('src', './ar.html');
+					arjs.setAttribute('frameborder', '0');
+					arjs.setAttribute('allowfullscreen', true);
+					$('#arjs > div').append(arjs)
 				}
 
-				const hideMain = () => {
-					$('body').removeClass('navPanel-visible');
-					$('body').addClass('is-preload');
-					$('#page-wrapper').hide();
-				}
-
-				const showTracker = () => {
-					// Hide all
-					hideMain();
-					hideYouTube();
+				const hideAR = () => {
+					$('.arjs-animation').remove();
 					$('#arjs').hide();
-					
-					// Show
-					setTimeout(() => {
-						initTracker();
-						$('#tracker').show();
-						$('body').removeClass('is-preload');
-					}, 1000);
 				}
 
 				const showAr = () => {
@@ -415,15 +426,14 @@
 					hideMain();
 					hideTracker();
 					hideYouTube();
-					// $('html, body').addClass('show-ar');
 
 					// Show
 					setTimeout(() => {
+						initAR();
 						$('#arjs').show();
 						$('body').removeClass('is-preload');
 					}, 1000);
 				}
-				
 			</script>
 
 	</body>
