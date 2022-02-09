@@ -396,9 +396,12 @@
 				}
 
 				const showTracker = () => {
+					// Hide all
 					hideMain();
+					hideAr();
 					$('#youtube').hide();
 
+					// Show
 					setTimeout(() => {
 						initMap();
 						$('#tracker').show();
@@ -407,17 +410,25 @@
 				}
 
 				const showAr = () => {
+					// Hide all
 					hideMain();
 					hideTracker();
 					$('#youtube').hide();
-					$('#footer').hide();
-					initAr();
 					$('html, body').addClass('show-ar');
+					$('#footer').hide();
+
+					// Show
+					setTimeout(() => {
+						initAr();
+						$('body').removeClass('is-preload');
+					}, 1000);
 				}
 
 				const showYouTube = () => {
+					// Hide all
 					hideMain();
 					hideTracker();
+					hideAr();
 
 					setTimeout(() => {
 						$('#youtube').show();
