@@ -407,8 +407,19 @@
 					marker.appendChild(entity_model);
 					scene.appendChild(marker);
 					scene.appendChild(entity_camera);
+					$('body').append(scene);
 				}
-        	</script>
+
+				const hideAr = () => {
+					$('a-scene').remove();
+					$('html, body').removeClass('show-ar');
+				}
+
+				const showAr = () => {
+					initAr();
+					$('html, body').addClass('show-ar');
+				}
+			</script>
 
 	</body>
 </html>
