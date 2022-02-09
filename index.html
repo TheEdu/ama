@@ -153,18 +153,22 @@
 		<!-- Youtube -->
 			<article id="youtube" class="wrapper style2 special">
 				<div class="container">
-					<iframe class="youtube-video"
+					<!-- <iframe 
+					class="youtube-video"
 					src="https://www.youtube.com/embed/TRgFGZ7LTis"
-					frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					frameborder="0" allow="autoplay; encrypted-media" 
+					allowfullscreen></iframe> -->
 				</div>
 			</article>
 
 		<!-- AR.js -->
 			<article id="arjs" class="wrapper special">
 				<div class="container">
-					<iframe class="arjs-animation"
+					<iframe 
+					class="arjs-animation"
 					src="./ar.html"
-					frameborder="0" allowfullscreen></iframe>
+					frameborder="0"
+					 allowfullscreen></iframe>
 				</div>
 			</article>
 
@@ -321,7 +325,7 @@
 					map.setCenter(newPoint);
 				}
 
-				const initMap = () => {
+				const initTracker = () => {
 					marker = null;
 					map = new google.maps.Map(document.getElementById("tracker-map"), {
 						center: { lat: -34.1082112, lng: -59.031552 },
@@ -346,6 +350,38 @@
 
 			</script>
 
+		<!-- Youtube -->
+			<script type="text/javascript">
+				const initYouTube = () => {
+					youtube = document.createElement('iframe');
+					youtube.setAttribute('class', 'youtube-video');
+					youtube.setAttribute('src', 'https://www.youtube.com/embed/TRgFGZ7LTis');
+					youtube.setAttribute('frameborder', '0');
+					youtube.setAttribute('allow', 'autoplay; encrypted-media');
+					youtube.setAttribute('allowfullscreen', true);
+					$('#youtube > div').appendChild(youtube)
+				}
+
+				const hideYouTube = () => {
+					$('.youtube-video').remove();
+					$('#youtube').hide();
+				}
+
+				const showYouTube = () => {
+					// Hide all
+					hideMain();
+					hideTracker();
+					$('#arjs').hide();
+
+					setTimeout(() => {
+						initYouTube()
+						$('#youtube').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
+				
+			</script>
+
 		<!-- Show() -->
 			<script type="text/javascript">
 
@@ -363,12 +399,12 @@
 				const showTracker = () => {
 					// Hide all
 					hideMain();
+					hideYouTube();
 					$('#arjs').hide();
-					$('#youtube').hide();
-
+					
 					// Show
 					setTimeout(() => {
-						initMap();
+						initTracker();
 						$('#tracker').show();
 						$('body').removeClass('is-preload');
 					}, 1000);
@@ -378,24 +414,12 @@
 					// Hide all
 					hideMain();
 					hideTracker();
-					$('#youtube').hide();
-					$('html, body').addClass('show-ar');
+					hideYouTube();
+					// $('html, body').addClass('show-ar');
 
 					// Show
 					setTimeout(() => {
 						$('#arjs').show();
-						$('body').removeClass('is-preload');
-					}, 1000);
-				}
-
-				const showYouTube = () => {
-					// Hide all
-					hideMain();
-					hideTracker();
-					$('#arjs').hide();
-
-					setTimeout(() => {
-						$('#youtube').show();
 						$('body').removeClass('is-preload');
 					}, 1000);
 				}
