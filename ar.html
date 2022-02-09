@@ -62,14 +62,6 @@
             entity_camera = document.createElement('a-entity');
             entity_camera.setAttribute('camera', true);
 
-            entity_model = document.createElement('a-entity');
-            entity_model.setAttribute('id', 'bowser-model');
-            entity_model.setAttribute('scale', '0.17602755668209502 0.17602755668209502 0.17602755668209502');
-            entity_model.setAttribute('animation-mixer', 'loop: repeat');
-            entity_model.setAttribute('gltf-model', 'assets/asset.glb');
-            entity_model.setAttribute('class', 'clickable');
-            entity_model.setAttribute('gesture-handler', true);
-
             marker = document.createElement('a-marker');
             marker.setAttribute('id', 'animated-marker');
             marker.setAttribute('type', 'pattern');
@@ -78,6 +70,14 @@
             marker.setAttribute('raycaster', 'objects: .clickable');
             marker.setAttribute('emitevents', 'true');
             marker.setAttribute('cursor', 'fuse: false; rayOrigin: mouse;');
+            
+            entity_model = document.createElement('a-entity');
+            entity_model.setAttribute('id', 'bowser-model');
+            entity_model.setAttribute('scale', '0.17602755668209502 0.17602755668209502 0.17602755668209502');
+            entity_model.setAttribute('animation-mixer', 'loop: repeat');
+            entity_model.setAttribute('gltf-model', 'assets/asset.glb');
+            entity_model.setAttribute('class', 'clickable');
+            entity_model.setAttribute('gesture-handler', true);
 
             marker.appendChild(entity_model);
             scene.appendChild(marker);
