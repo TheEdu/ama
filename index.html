@@ -160,7 +160,7 @@
 			</article>
 
 		<!-- AR.js -->
-			<article id="arjs" class="wrapper style2 special">
+			<article id="arjs" class="wrapper special">
 				<div class="container">
 					<iframe class="arjs-animation"
 					src="./ar.html"
@@ -348,6 +348,11 @@
 
 		<!-- Show() -->
 			<script type="text/javascript">
+
+				const hideAr = () => {
+					$('html, body').removeClass('show-ar');
+					$('#footer').show();
+				}
 
 				const hideMain = () => {
 					$('body').removeClass('navPanel-visible');
