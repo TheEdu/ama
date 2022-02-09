@@ -2,11 +2,16 @@
 <html>
     <head>
         <script src="assets/js/jquery.min.js"></script>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <!-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script> -->
+        <script src="assets/js/ar/aframe.min.js"></script>
+        <script src="assets/js/ar/aframe-ar.js"></script>
+        <script src="assets/js/ar/aframe-extras.loaders.min.js"></script>
+        <script src="assets/js/ar/gesture-detector.js"></script>
+        <script src="assets/js/ar/gesture-handler.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -19,12 +24,12 @@
             embedded
             gesture-detector
         >
-            <!-- <a-assets>
+            <a-assets>
                 <a-asset-item
                     id="animated-asset"
                     src="assets/asset.glb"
                 ></a-asset-item>
-            </a-assets> -->
+            </a-assets>
 
             <a-marker
                 id="animated-marker"
@@ -39,7 +44,7 @@
                     id="bowser-model"
                     scale="0.17602755668209502 0.17602755668209502 0.17602755668209502"
                     animation-mixer="loop: repeat"
-                    gltf-model="assets/asset.glb"
+                    gltf-model="#animated-asset"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
@@ -49,41 +54,41 @@
         </a-scene>
     </body>
     <script type="text/javascript">
-        const initAr = () => {
-            scene = document.createElement('a-scene');
-            scene.setAttribute('id', 'scene');
-            scene.setAttribute('vr-mode-ui', 'enabled: false;');
-            scene.setAttribute('loading-screen', 'enabled: false;');
-            scene.setAttribute('renderer', 'logarithmicDepthBuffer: true;');
-            scene.setAttribute('arjs', 'trackingMethod: best; sourceType: webcam; debugUIEnabled: false;');
-            scene.setAttribute('embedded', true);
-            scene.setAttribute('gesture-detector', true);
+        // const initAr = () => {
+        //     scene = document.createElement('a-scene');
+        //     scene.setAttribute('id', 'scene');
+        //     scene.setAttribute('vr-mode-ui', 'enabled: false;');
+        //     scene.setAttribute('loading-screen', 'enabled: false;');
+        //     scene.setAttribute('renderer', 'logarithmicDepthBuffer: true;');
+        //     scene.setAttribute('arjs', 'trackingMethod: best; sourceType: webcam; debugUIEnabled: false;');
+        //     scene.setAttribute('embedded', true);
+        //     scene.setAttribute('gesture-detector', true);
 
-            entity_camera = document.createElement('a-entity');
-            entity_camera.setAttribute('camera', true);
+        //     entity_camera = document.createElement('a-entity');
+        //     entity_camera.setAttribute('camera', true);
 
-            marker = document.createElement('a-marker');
-            marker.setAttribute('id', 'animated-marker');
-            marker.setAttribute('type', 'pattern');
-            marker.setAttribute('preset', 'custom');
-            marker.setAttribute('url', 'assets/marker.patt');
-            marker.setAttribute('raycaster', 'objects: .clickable');
-            marker.setAttribute('emitevents', 'true');
-            marker.setAttribute('cursor', 'fuse: false; rayOrigin: mouse;');
+        //     marker = document.createElement('a-marker');
+        //     marker.setAttribute('id', 'animated-marker');
+        //     marker.setAttribute('type', 'pattern');
+        //     marker.setAttribute('preset', 'custom');
+        //     marker.setAttribute('url', 'assets/marker.patt');
+        //     marker.setAttribute('raycaster', 'objects: .clickable');
+        //     marker.setAttribute('emitevents', 'true');
+        //     marker.setAttribute('cursor', 'fuse: false; rayOrigin: mouse;');
             
-            entity_model = document.createElement('a-entity');
-            entity_model.setAttribute('id', 'bowser-model');
-            entity_model.setAttribute('scale', '0.17602755668209502 0.17602755668209502 0.17602755668209502');
-            entity_model.setAttribute('animation-mixer', 'loop: repeat');
-            entity_model.setAttribute('gltf-model', 'assets/asset.glb');
-            entity_model.setAttribute('class', 'clickable');
-            entity_model.setAttribute('gesture-handler', true);
+        //     entity_model = document.createElement('a-entity');
+        //     entity_model.setAttribute('id', 'bowser-model');
+        //     entity_model.setAttribute('scale', '0.17602755668209502 0.17602755668209502 0.17602755668209502');
+        //     entity_model.setAttribute('animation-mixer', 'loop: repeat');
+        //     entity_model.setAttribute('gltf-model', 'assets/asset.glb');
+        //     entity_model.setAttribute('class', 'clickable');
+        //     entity_model.setAttribute('gesture-handler', true);
 
-            marker.appendChild(entity_model);
-            scene.appendChild(marker);
-            scene.appendChild(entity_camera);
-            $('body').append(scene);
-        }
+        //     marker.appendChild(entity_model);
+        //     scene.appendChild(marker);
+        //     scene.appendChild(entity_camera);
+        //     $('body').append(scene);
+        // }
 
         // $( document ).ready(function() {
         //     console.log( "ready!" );

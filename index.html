@@ -159,6 +159,15 @@
 				</div>
 			</article>
 
+		<!-- AR.js -->
+			<article id="arjs" class="wrapper style2 special">
+				<div class="container">
+					<iframe class="arjs-animation"
+					src="./ar.html"
+					frameborder="0" allowfullscreen></iframe>
+				</div>
+			</article>
+
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -337,56 +346,6 @@
 
 			</script>
 
-		<!-- Mundo Ama -->
-			<script src="assets/js/ar/aframe.min.js"></script>
-        	<script src="assets/js/ar/aframe-ar.js"></script>
-        	<script src="assets/js/ar/aframe-extras.loaders.min.js"></script>
-        	<script src="assets/js/ar/gesture-detector.js"></script>
-        	<script src="assets/js/ar/gesture-handler.js"></script>
-        	<script type="text/javascript">
-				const initAr = () => {
-					scene = document.createElement('a-scene');
-					scene.setAttribute('id', 'scene');
-					scene.setAttribute('vr-mode-ui', 'enabled: false;');
-					scene.setAttribute('loading-screen', 'enabled: false;');
-					scene.setAttribute('renderer', 'logarithmicDepthBuffer: true;');
-					scene.setAttribute('arjs', 'trackingMethod: best; sourceType: webcam; debugUIEnabled: false;');
-					scene.setAttribute('embedded', true);
-					scene.setAttribute('gesture-detector', true);
-
-					entity_camera = document.createElement('a-entity');
-					entity_camera.setAttribute('camera', true);
-
-					entity_model = document.createElement('a-entity');
-					entity_model.setAttribute('id', 'bowser-model');
-					entity_model.setAttribute('scale', '0.17602755668209502 0.17602755668209502 0.17602755668209502');
-					entity_model.setAttribute('animation-mixer', 'loop: repeat');
-					entity_model.setAttribute('gltf-model', 'assets/asset.glb');
-					entity_model.setAttribute('class', 'clickable');
-					entity_model.setAttribute('gesture-handler', true);
-
-					marker = document.createElement('a-marker');
-					marker.setAttribute('id', 'animated-marker');
-					marker.setAttribute('type', 'pattern');
-					marker.setAttribute('preset', 'custom');
-					marker.setAttribute('url', 'assets/marker.patt');
-					marker.setAttribute('raycaster', 'objects: .clickable');
-					marker.setAttribute('emitevents', 'true');
-					marker.setAttribute('cursor', 'fuse: false; rayOrigin: mouse;');
-
-					marker.appendChild(entity_model);
-					scene.appendChild(marker);
-					scene.appendChild(entity_camera);
-					$('body').append(scene);
-				}
-
-				const hideAr = () => {
-					$('a-scene').remove();
-					$('html, body').removeClass('show-ar');
-					$('#footer').show();
-				}
-			</script>
-
 		<!-- Show() -->
 			<script type="text/javascript">
 
@@ -399,7 +358,7 @@
 				const showTracker = () => {
 					// Hide all
 					hideMain();
-					hideAr();
+					$('#arjs').hide();
 					$('#youtube').hide();
 
 					// Show
@@ -416,11 +375,10 @@
 					hideTracker();
 					$('#youtube').hide();
 					$('html, body').addClass('show-ar');
-					$('#footer').hide();
 
 					// Show
 					setTimeout(() => {
-						initAr();
+						$('#arjs').show();
 						$('body').removeClass('is-preload');
 					}, 1000);
 				}
@@ -429,7 +387,7 @@
 					// Hide all
 					hideMain();
 					hideTracker();
-					hideAr();
+					$('#arjs').hide();
 
 					setTimeout(() => {
 						$('#youtube').show();
