@@ -327,23 +327,6 @@
 					}
 				}
 
-				const hideBody = () => {
-					$('body').removeClass('navPanel-visible');
-					$('body').addClass('is-preload');
-					$('#page-wrapper').hide();
-				}
-
-				const showTracker = () => {
-					hideBody();
-					$('#youtube').hide();
-
-					setTimeout(() => {
-						initMap();
-						$('#tracker').show();
-						$('body').removeClass('is-preload');
-					}, 1000);
-				}
-
 				const hideTracker = () => {
 					$('#tracker').hide();
 					$('#tracker-map > div').remove();
@@ -352,19 +335,6 @@
 					}
 				}
 
-			</script>
-
-		<!-- YouTube -->
-			<script type="text/javascript">
-				const showYouTube = () => {
-					hideBody();
-					hideTracker();
-
-					setTimeout(() => {
-						$('#youtube').show();
-						$('body').removeClass('is-preload');
-					}, 1000);
-				}
 			</script>
 
 		<!-- Mundo Ama -->
@@ -414,12 +384,47 @@
 					$('a-scene').remove();
 					$('html, body').removeClass('show-ar');
 				}
+			</script>
+
+		<!-- Show() -->
+			<script type="text/javascript">
+
+				const hideMain = () => {
+					$('body').removeClass('navPanel-visible');
+					$('body').addClass('is-preload');
+					$('#page-wrapper').hide();
+				}
+
+				const showTracker = () => {
+					hideMain();
+					$('#youtube').hide();
+
+					setTimeout(() => {
+						initMap();
+						$('#tracker').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
 
 				const showAr = () => {
+					hideMain();
+					hideTracker();
+					$('#youtube').hide();
+					$('#footer').hide();
 					initAr();
 					$('html, body').addClass('show-ar');
-					hideBody();
 				}
+
+				const showYouTube = () => {
+					hideMain();
+					hideTracker();
+
+					setTimeout(() => {
+						$('#youtube').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
+				
 			</script>
 
 	</body>
