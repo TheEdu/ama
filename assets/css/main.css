@@ -3945,7 +3945,7 @@ input, select, textarea {
 
 		/* Youtube */
 
-			.youtube-video, .map {
+			.youtube-video, .map, .arjs-animation {
 				width: 900px;
 				height: 700px;
 			}
@@ -4062,7 +4062,7 @@ input, select, textarea {
 
 		/* Youtube */
 
-			.youtube-video, .map {
+			.youtube-video, .map, .arjs-animation {
 				width: 600px;
 				height: 450px;
 			}
@@ -4369,7 +4369,7 @@ input, select, textarea {
 
 		/* Youtube */
 
-			.youtube-video, .map {
+			.youtube-video, .map, .arjs-animation {
 				width: 450px;
 				height: 400px;
 			}
