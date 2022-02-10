@@ -26,6 +26,7 @@
 							</a>
 							<ul>
 								<li><span><b>Nombre del Usuario</b></span></li>
+								<li><a href="#" onclick="showMain()">Evento</a></li>
 								<li><a href="#" onclick="showTracker()">Donde estoy?</a></li>
 								<li><a href="#" onclick="showYouTube()">Show en Vivo</a></li>
 								<li><a href="#" onclick="showAr()">Mundo Ama</a></li>
@@ -39,7 +40,7 @@
 		<!-- Header Mobile -->
 			<div id="titleBar">
 				<a href="#navPanel" class="toggle"></a>
-				<span class="title"> <img src="images/logo.png"> </span>
+				<span class="title"> <a href="/"><img src="images/logo.png"></a> </span>
 			</div>
 
 			<div id="navPanel">
@@ -53,6 +54,10 @@
 
 					<span><b>Nombre del Usuario</b></span>
 					<br>
+
+					<a href="#" onclick="showMain()">Evento</a>
+					<div class="line-separator"></div>
+
 					<a href="#" onclick="showTracker()">Donde estoy?</a>
 					<div class="line-separator"></div>
 
@@ -300,11 +305,26 @@
 
 		<!-- Main: Page Wrapper -->
 			<script type="text/javascript">
+				const showMain = () => {
+					// Hide all
+					hideTracker();
+					hideYouTube();
+					hideAR();
+					$('body').addClass('is-preload');
+					$('body').removeClass('navPanel-visible');
+
+					// Show
+					setTimeout(() => {
+						$('#page-wrapper').show();
+						$('body').removeClass('is-preload');
+					}, 1000);
+				}
+
 				const hideMain = () => {
-						$('body').removeClass('navPanel-visible');
-						$('body').addClass('is-preload');
-						$('#page-wrapper').hide();
-					}
+					$('body').removeClass('navPanel-visible');
+					$('body').addClass('is-preload');
+					$('#page-wrapper').hide();
+				}
 			</script>
 
 		<!-- Google maps -->
